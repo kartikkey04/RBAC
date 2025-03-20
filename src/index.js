@@ -1,7 +1,10 @@
-const express = require('express');
-const dotenv = require('dotenv').config();
+const express = require("express");
+const dotenv = require("dotenv").config();
+const dbConnect = require("./config/dbConnect");
 
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8000;
+
+dbConnect();
 
 const app = express();
 
@@ -13,6 +16,6 @@ app.use(express.json());
 
 // Start the server
 
-app.listen(PORT, ()=>{
-    console.log(`Server is listening at port ${PORT}`);
-})
+app.listen(PORT, () => {
+  console.log(`Server is listening at port ${PORT}`);
+});
