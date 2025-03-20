@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const dbConnect = require("./config/dbConnect");
+const authRoutes = require("./routes/authRoutes");
 
 const PORT = process.env.PORT || 8000;
 
@@ -13,6 +14,8 @@ const app = express();
 app.use(express.json());
 
 // Routes
+
+app.use('/api/auth', authRoutes);
 
 // Start the server
 
